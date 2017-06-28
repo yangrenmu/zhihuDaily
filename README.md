@@ -5,7 +5,8 @@
 ## 演示 
 * [在线演示](https://yangrenmu.github.io/zhihuDaily/#/home)
 * 移动端演示，扫描下面二维码即可。
-![](http://upload-images.jianshu.io/upload_images/4928722-c4962dbb4b0a90ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+<img src="http://upload-images.jianshu.io/upload_images/4928722-c4962dbb4b0a90ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 ## 技术栈
 * vue
@@ -56,5 +57,6 @@ npm run build --report
 </pre>
 
 ## 项目截图
-![](http://upload-images.jianshu.io/upload_images/4928722-6bc82a595207e5ed.gif?imageMogr2/auto-orient/strip)
+<img src="http://upload-images.jianshu.io/upload_images/4928722-6bc82a595207e5ed.gif?imageMogr2/auto-orient/strip">
+
 ![](http://upload-images.jianshu.io/upload_images/4928722-a967b48fc2b030be.gif?imageMogr2/auto-orient/strip)
