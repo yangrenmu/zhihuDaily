@@ -57,5 +57,5 @@ npm run build --report
 </pre>
 
 ## 项目截图
-<img src="http://os99ecca9.bkt.clouddn.com/1.gif">
-<img src="http://os99ecca9.bkt.clouddn.com/2.gif">
+<img src="https://github.com/yangrenmu/zhihuDaily/blob/master/image/1.gif">
+<img src="https://github.com/yangrenmu/zhihuDaily/blob/master/image/2.gif">
