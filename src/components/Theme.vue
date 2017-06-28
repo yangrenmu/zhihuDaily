@@ -34,7 +34,7 @@
   </div>
 </template>
 <script type="text/javascript">
-import sideBar from '../sideBar/sideBar.vue';
+import sideBar from './Sidebar.vue';
 import {
   mapGetters
 } from 'vuex';

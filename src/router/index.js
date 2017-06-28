@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import homePage from '../components/homePage/homePage.vue';
-import article from '../components/article/article.vue';
-import comment from '../components/comment/comment.vue';
-import themes from '../components/theme/theme.vue';
+import homePage from '../components/HomePage.vue';
+import article from '../components/Article.vue';
+import comment from '../components/Comment.vue';
+import themes from '../components/Theme.vue';
 
 Vue.use(Router);
 

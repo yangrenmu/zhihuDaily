@@ -81,7 +81,7 @@ export default {
 };
 </script>
 <style lang="scss" type="text/css">
-@import '../../common/css/news_qa.auto.css';
+@import '../common/css/news_qa.auto.css';
 .article {
   width: 100%;
   max-width: 768px;

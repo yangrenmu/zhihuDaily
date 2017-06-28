@@ -98,7 +98,7 @@ export default {
 };
 </script>
 <style lang="scss" type="text/css">
-@import '../../common/css/mixin.scss';
+@import '../common/css/mixin.scss';
 .articleList {
   width: 100%;
   background: rgba(240, 240, 240, 0.8);

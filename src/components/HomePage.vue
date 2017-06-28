@@ -18,9 +18,9 @@
   </div>
 </template>
 <script>
-import swiper from '../swiper/swiper';
-import articleList from '../articleList/articleList';
-import sideBar from '../sideBar/sideBar';
+import swiper from './Swiper';
+import articleList from './ArticleList';
+import sideBar from './Sidebar';
 import {
   mapGetters
 } from 'vuex';

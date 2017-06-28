@@ -15,7 +15,7 @@
   </div>
 </template>
 <script type="text/javascript">
-import Swiper from '../../../static/swiper/swiper-3.4.2.min.js';
+import Swiper from '../../static/swiper/swiper-3.4.2.min.js';
 export default {
   data: function() {
     return {
@@ -63,7 +63,7 @@ export default {
 };
 </script>
 <style lang="scss" type="text/css">
-@import '../../../static/swiper/swiper-3.4.2.min.css';
+@import '../../static/swiper/swiper-3.4.2.min.css';
 #swiper {
   margin-top: 50px;
   .swiper-container {
