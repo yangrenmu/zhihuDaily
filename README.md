@@ -57,5 +57,5 @@ npm run build --report
 </pre>
 
 ## 项目截图
-<img src="http://upload-images.jianshu.io/upload_images/4928722-6bc82a595207e5ed.gif?imageMogr2/auto-orient/strip">
-<img src="http://upload-images.jianshu.io/upload_images/4928722-a967b48fc2b030be.gif?imageMogr2/auto-orient/strip">
+<img src="http://os99ecca9.bkt.clouddn.com/1.gif">
+<img src="http://os99ecca9.bkt.clouddn.com/2.gif">
