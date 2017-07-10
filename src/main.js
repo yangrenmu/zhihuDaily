@@ -22,7 +22,9 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App }
+  components: {
+    App
+  }
 });
 router.push('/home');
 let indexScrollTop = 0;

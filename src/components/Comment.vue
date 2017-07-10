@@ -72,12 +72,12 @@ export default {
       this.article = '';
       this.extraInfo = '';
     }
-    this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/contents/' + this.articleId + '/long-comments').then((res) => {
+    this.axios.get('http://zhihuapi.herokuapp.com/api/4/story/' + this.articleId + '/long-comments').then((res) => {
       this.preArticleId = this.articleId;
-      this.longComment = res.data.COMMENTS.comments;
+      this.longComment = res.data.comments;
     });
-    this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/contents/' + this.articleId + '/short-comments').then((res) => {
-      this.shortComment = res.data.COMMENTS.comments;
+    this.axios.get('http://zhihuapi.herokuapp.com/api/4/story/' + this.articleId + '/short-comments').then((res) => {
+      this.shortComment = res.data.comments;
     });
     window.scrollTo(0, 0);
   },

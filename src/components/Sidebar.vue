@@ -45,8 +45,8 @@ export default {
     };
   },
   created() {
-    this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/themes').then((res) => {
-      this.themeList = res.data.THEMES.others;
+    this.axios.get('http://zhihuapi.herokuapp.com/api/4/themes').then((res) => {
+      this.themeList = res.data.others;
     });
   },
   computed: {

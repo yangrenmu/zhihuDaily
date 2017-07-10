@@ -31,10 +31,10 @@ export default {
   },
   created() {
     // 获取今日新闻
-    this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/last-stories').then((res) => {
-      this.date.push(res.data.STORIES['date']);
-      this.articleList.push(res.data.STORIES['stories']);
-      this.todayDate = res.data.STORIES['date'];
+    this.axios.get('http://zhihuapi.herokuapp.com/api/4/news/latest').then((res) => {
+      this.date.push(res.data['date']);
+      this.articleList.push(res.data['stories']);
+      this.todayDate = res.data['date'];
     });
   },
   mounted() {
@@ -49,10 +49,10 @@ export default {
         this.REQUIRE = false;
         this.loading = true;
         this.tips = '努力加载中...';
-        this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/before-stories/' + this.todayDate).then((res) => {
-          this.articleList.push(res.data.STORIES['stories']);
-          this.date.push(res.data.STORIES['date']);
-          this.todayDate = res.data.STORIES['date'];
+        this.axios.get('http://zhihuapi.herokuapp.com/api/4/news/before/' + this.todayDate).then((res) => {
+          this.articleList.push(res.data['stories']);
+          this.date.push(res.data['date']);
+          this.todayDate = res.data['date'];
           // 请求的数据加载完成后，再次滚动到底部时，允许请求前一天数据
           this.$nextTick(() => {
             this.REQUIRE = true;

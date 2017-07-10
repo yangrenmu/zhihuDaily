@@ -22,11 +22,13 @@
             <img class="image" :src="item.avatar">
           </div>
         </div>
-        <div v-for="item in themeStories" class="article">
-          <span class="text">{{item.title}}</span>
-          <div v-if="item.images" class="image-box">
-            <img v-if="item.images" class="image" :src="item.images">
-          </div>
+        <div v-for="item in themeStories" class="article-wrap">
+          <article @click="showArticle(item.id)" class="article">
+            <span class="text">{{item.title}}</span>
+            <div v-if="item.images" class="image-box">
+              <img v-if="item.images" class="image" :src="item.images">
+            </div>
+          </article>
         </div>
       </article>
     </section>
@@ -47,18 +49,18 @@ export default {
   },
   created() {
     if (this.currentIndex >= 0) {
-      this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/themes/' + this.themeList[this.currentIndex].id).then((res) => {
-        this.themeStories = res.data.THEMEDES.stories;
-        this.editors = res.data.THEMEDES.editors;
+      this.axios.get('http://zhihuapi.herokuapp.com/api/4/theme/' + this.themeList[this.currentIndex].id).then((res) => {
+        this.themeStories = res.data.stories;
+        this.editors = res.data.editors;
       });
     }
   },
   watch: {
     currentIndex: function() {
       if (this.currentIndex >= 0) {
-        this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/themes/' + this.themeList[this.currentIndex].id).then((res) => {
-          this.themeStories = res.data.THEMEDES.stories;
-          this.editors = res.data.THEMEDES.editors;
+        this.axios.get('http://zhihuapi.herokuapp.com/api/4/theme/' + this.themeList[this.currentIndex].id).then((res) => {
+          this.themeStories = res.data.stories;
+          this.editors = res.data.editors;
         });
       }
     }
@@ -74,6 +76,12 @@ export default {
     showSideBar() {
       this.$store.commit('setShowSideBar');
       this.$store.commit('setHomeHidden');
+    },
+    showArticle(id) {
+      // 跳转到动态路由
+      this.$router.push('/article/' + id);
+      // 更新文章的 id
+      this.$store.commit('setArticleId', id);
     }
   },
   components: {
@@ -116,7 +124,7 @@ export default {
       flex: 1;
       padding-left: 10px;
       .text {
-        font-size: 16px;
+        font-size: 20px;
       }
     }
     .more {
@@ -157,8 +165,9 @@ export default {
         position: absolute;
         bottom: 20px;
         padding: 0 20px;
+        line-height: 24px;
+        font-size: 20px;
         color: #fff;
-        font-size: 16px;
       }
       .mask {
         position: absolute;
@@ -178,7 +187,7 @@ export default {
         height: 50px;
         .text {
           flex: 0 0 50px;
-          font-size: 16px;
+          font-size: 20px;
         }
         .avatar {
           flex: 0 0 40px;
@@ -189,29 +198,31 @@ export default {
           }
         }
       }
-      .article {
-        display: flex;
-        width: 100%;
-        min-height: 60px;
-        padding: 10px 14px;
-        margin-top: 5px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 1px 1px 1px #ccc;
-        background: #fff;
-        .text {
-          flex: 1;
-          line-height: 20px;
-          font-size: 16px;
-        }
-        .image-box {
-          flex: 0 0 auto;
-          height: 75px;
-          max-width: 75px;
-          overflow: hidden;
-          .image {
-            height: 100%;
+      .article-wrap {
+        .article {
+          display: flex;
+          width: 100%;
+          min-height: 60px;
+          padding: 10px 14px;
+          margin-top: 5px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 1px 1px 1px #ccc;
+          background: #fff;
+          .text {
+            flex: 1;
+            line-height: 22px;
+            font-size: 18px;
+          }
+          .image-box {
+            flex: 0 0 auto;
+            height: 75px;
+            max-width: 75px;
+            overflow: hidden;
+            .image {
+              height: 100%;
+            }
           }
         }
       }

@@ -23,8 +23,8 @@ export default {
     };
   },
   created: function() {
-    this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/last-stories').then((res) => {
-      this.topStories = res.data.STORIES.top_stories;
+    this.axios.get('http://zhihuapi.herokuapp.com/api/4/news/latest').then((res) => {
+      this.topStories = res.data.top_stories;
       this.$nextTick(function() {
         this.initSwiper();
       });
@@ -95,6 +95,7 @@ export default {
           left: 0;
           padding: 0 20px;
           font-size: 20px;
+          line-height: 24px;
           color: #fff;
           z-index: 2;
         }

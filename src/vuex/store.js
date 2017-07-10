@@ -20,6 +20,7 @@ export default new Vuex.Store({
     currentIndex: state => state.currentIndex,
     themeList: state => state.themeList
   },
+
   mutations: {
     setArticleId(state, id) {
       state.articleId = id;

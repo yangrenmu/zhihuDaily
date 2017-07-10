@@ -44,13 +44,13 @@ export default {
     if (this.preArticleId !== this.articleId) {
       this.article = '';
       this.extraInfo = '';
-      this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/contents/' + this.articleId).then((res) => {
-        this.article = res.data.CONTENTS;
+      this.axios.get('http://zhihuapi.herokuapp.com/api/4/news/' + this.articleId).then((res) => {
+        this.article = res.data;
         this.preArticleId = this.articleId;
       });
       // 获取文章的评论数和点赞数
-      this.axios.get('https://zhihu-daily.leanapp.cn/api/v1/contents/extra/' + this.articleId).then((res) => {
-        this.extraInfo = res.data.DES;
+      this.axios.get('http://zhihuapi.herokuapp.com/api/4/story-extra/' + this.articleId).then((res) => {
+        this.extraInfo = res.data;
       });
       window.scrollTo(0, 0);
     }
@@ -154,7 +154,8 @@ export default {
         bottom: 28px;
         left: 0;
         padding: 0 10px;
-        font-size: 22px;
+        font-size: 20px;
+        line-height: 26px;
         color: #fff;
         z-index: 2;
       }

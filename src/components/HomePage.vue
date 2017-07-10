@@ -25,26 +25,26 @@ import {
   mapGetters
 } from 'vuex';
 export default {
-  activated() {
-      // 切回首页时候，重新初始化轮播图
-      this.$refs.swiper.startPlay();
-    },
-    computed: {
-      ...mapGetters([
-        'homeHidden'
-      ])
-    },
   methods: {
-      showSideBar() {
-        this.$store.commit('setShowSideBar');
-        this.$store.commit('setHomeHidden');
-      }
-    },
-    components: {
-      swiper,
-      articleList,
-      sideBar
+    showSideBar() {
+      this.$store.commit('setShowSideBar');
+      this.$store.commit('setHomeHidden');
     }
+  },
+  activated() {
+    // 切回首页时候，重新初始化轮播图
+    this.$refs.swiper.startPlay();
+  },
+  computed: {
+    ...mapGetters([
+      'homeHidden'
+    ])
+  },
+  components: {
+    swiper,
+    articleList,
+    sideBar
+  }
 };
 </script>
 <style lang="scss">
